@@ -148,6 +148,40 @@ ORDER BY column [asc | desc]
         </section>
         <section id="pa">
             <h2>PROCEDIMIENTOS ALMACENADOS</h2>
+            <div class="div_code">
+                <pre class="code_edit">
+                <code>
+create or replace procedure sp_insert_category(
+    category_id smallint,
+    category_name varchar(15),
+    description text
+)
+    language plpgsql as
+$$
+begin
+    insert into categories(category_id, category_name, description)
+    values (category_id, category_name, description);
+end;
+$$;
+
+select *
+from categories;
+DO
+$$
+
+DECLARE
+in_category_id   smallint := 10;
+in_category_name VARCHAR  := 'Test';
+in_description   VARCHAR  := 'Test';
+
+BEGIN
+call sp_insert_category(in_category_id, in_category_name, in_description);
+END 
+$$;
+                    
+                </code>
+                </pre>    
+                </div>
         </section>
         <section id="fu">
             <h2>FUNCIONES DEL USUARIO</h2>
@@ -225,7 +259,7 @@ select * from get_current_date_prior() as prior_day;
         </section>
     </main>
     <footer>
-        <p>Autor : Karen Choquecallata Mancilla</p>
+        <p>Autor : KACH</p>
     </footer>
 </body>
 
