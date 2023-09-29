@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     
@@ -12,6 +13,18 @@ header{
     color: white;
     padding: 16px;
     text-align: center;
+}
+.container_menu{
+    overflow: hidden;
+    background-color: #272b49;
+}
+.container_menu a {
+    float: left;
+    display: block; 
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 aside{
     margin: 20px;

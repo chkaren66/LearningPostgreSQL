@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Querys</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>POSTGRESQL</h1>
+    </header>
+    <nav class="container_menu padre">
+       <a href="">Funciones</a>
+       <a href="">Consultas </a>
+       <a href="">Data Development</a>
+    </nav>
+    <main>
+        <div>Menu</div>
+        <aside id="indice">
+            <h2>Indice</h2>
+            <div>
+                <ol>
+                    <li ><a href="#ddl">DDL (Data Definition Language) </a></li>
+                    <li ><a href="#dml">DML (Data Manipulation Language) </a></li>
+                   
+                </ol>
+            </div>
+           
+        </aside>
+        <section id="ddl">
+            <h2>DDL (Data Definition Language)</h2>
+            <ol>
+                <li>CREATE</li>
+                <li>ALTER</li>
+                <li>DROP</li>
+                <li>TRUNCATE</li>
+                <li>COMMENT</li>
+                <li>RENAME</li>
+            </ol>
+        </section>
+        <section id="dml">
+            <h2>DML (Data Manipulation Language)</h2>
+            <ol>
+                <li>SELECT
+<div class="div_code">
+<pre class="code_edit">
+<code>
+select colum1, colum2 
+from tabla
+where condicion; 
+</code>
+</pre>    
+</div>
+                </li>
+                <li>INSERT
+<div class="div_code">
+<pre class="code_edit">
+<code>
+insert into nombre_tabla(colum1, colum2, colum3, column)
+values(dato1, dato2, dato3, daton);
+</code>
+</pre>    
+</div>
+                </li>
+                <li>UPDATE
+<div class="div_code">
+<pre class="code_edit">
+<code>
+update nombre_tabla
+set colum_name = nuevo_dato,
+    colum2_name = nuevo_dato
+where columna_id = columna_Id;
+</code>
+</pre>    
+</div>
+                </li>
+                <li>DELETE
+<div class="div_code">
+<pre class="code_edit">
+<code>
+DELETE from nombre_tabla
+where columna_id = in_columa_id;
+</code>
+</pre>    
+</div>
+                </li>
+            </ol>
+        </section>
+       
+
+    </main>
+    <footer>
+        <p>Autor : KACH</p>
+    </footer>
+</body>
+
+</html>
+</html>
