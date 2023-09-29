@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+header{
+    background-color: rgb(12, 1, 26);
+    color: white;
+    padding: 16px;
+    text-align: center;
+}
+aside{
+    margin: 20px;
+}
+aside div {
+    border: 1px solid  rgb(12, 1, 26);
+    padding-left: 40px;
+    border-radius: 0 0 16px 16px;
+}
+aside a{
+    color:  rgb(12, 1, 26);
+    margin-left: 20px;
+    text-decoration: none;
+}
+main{
+   
+    margin: 20px;
+    padding: 16px;
+}
+
+h2{
+    padding: 10px;
+    padding-left: 20px;
+    border-bottom: 1px solid rgb(12, 1, 26);
+    /* border-radius: 12px; */
+    color:  rgb(12, 1, 26);
+}
+ol{
+    margin: 16px;
+    color:  rgb(12, 1, 26);
+}
+
+.div_code{
+    text-align: left;
+    margin: 6px;
+    /* background-color: white;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px; */
+    /* text-align: center; */
+}
+.code_edit{
+    display: block; 
+	padding: 3px 12px ; 
+	font-size: 14px; 
+	line-height: 20px;
+	width: 100%;
+	background-color: #272b49;
+    border-radius: 6px;
+	font-family: arial;
+	color: #f7f7f7;
+	font-weight: bold;
+}
+code{
+    text-align: left;
+   
+}
+footer{
+    margin: 20px;
+    text-align: right;
+}

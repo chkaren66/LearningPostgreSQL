@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostgreSQL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>POSTGRESQL</h1>
+
+    </header>
+    <main>
+        <aside id="indice">
+            <h2>Indice</h2>
+            <div>
+                <ol>
+                    <li ><a href="#fa">Funciones Agregadas</a></li>
+                    <li ><a href="#fc">Funciones de Cadena</a></li>
+                    <li ><a href="#fn">Funciones Numericas</a></li>
+                    <li ><a href="#fv">Funciones de Ventana</a></li>
+                    <li ><a href="#fftd">Funciones de Formato de Tipo de Dato</a></li>
+                    <li ><a href="#fff">Funciones de Formato de Fecha</a></li>
+                    <li ><a href="#pa">Procedimientos Alamacenados</a></li>
+                    <li ><a href="#fu">Funciones del Usuario</a></li>
+                    
+                </ol>
+            </div>
+           
+        </aside>
+        <section id="fa">
+            <h2>FUNCIONES AGREGADAS</h2>
+            <ol>
+                <li>
+                    <h3>AVG()</h3>
+
+
+                </li>
+                <li>COUNT()</li>
+                <li>MAX()</li>
+                <li>MIN()</li>
+                <li>SUM()</li>
+                <li>HAVING</li>
+                <li>ARRAY_AGG</li>
+            </ol>
+        </section>
+        <section id="fc">
+            <h2>FUNCIONES DE CADENA</h2>
+
+            <ol>
+                <li>
+                    <a href="">CONCAT</a>
+                    <div class="div_code">
+<pre class="code_edit">
+<code>
+select concat('hola',' ','mundo');
+</code>
+</pre>    
+                    </div>
+                </li>
+                <li>
+                    <a href="">LENGTH</a>
+                    <div class="div_code">
+<pre class="code_edit">
+<code>
+select length('hola mundo como esta ');
+</code>
+</pre>    
+                    </div>
+                </li>
+                <li>UPPER - LOWER</li>
+                <li>SUBSTRING</li>
+                <li>REPLACE</li>
+                <li>POSITION</li>
+                <li>TRIM,LTRIM,RTRIM</li>
+                <li>SPLIT_PART</li>
+                <li>UNNEST, STRING_TO_ARRAY</li>
+             
+            </ol>
+        </section>
+        <section id="fn">
+            <h2>FUNCIONES NUMERICAS</h2>
+            <ol>
+                <li>SQRT</li>
+                <li>POWER</li>
+                <li>ABS</li>
+                <li>ROUND</li>
+                <li>CEIL</li>
+                <li>FLOOR</li>
+                <li>TRUNC</li>
+            </ol>
+
+        </section>
+    
+        <section id="fv">
+            <h2>FUNCIONES DE VENTANA</h2>
+            <div class="div_code">
+                <pre class="code_edit">
+                <code>
+window_function(arg1,arg2....) OVER (
+PARTITION BY partition_expression
+ORDER BY column [asc | desc]
+                )</code>
+                </pre>    
+                </div>
+           
+            <ol>
+                <li>ROW_NUMBER</li>
+                <li>RANK</li>
+                <li>DENSE_RANK</li>
+                <li>FIRST_VALUE</li>
+                <li>LAST_VALUE</li>
+                <li>LAG</li>
+                <li>LEAD</li>
+            </ol>
+        </section>
+        <section id="fftd">
+            <h2>FUNCIONES DE FORMATO DE TIPOS DE DATO</h2>
+            <ol>
+                <li>TO_CHAR</li>
+                <li>TO_DATE</li>
+                <li>TO_TIMESTAMP</li>
+                <li>TO_NUMBER</li>
+                <li>CAST</li>
+                <li>EXTRACT</li>
+                <li>DATE_PART</li>
+                <li>TO_HEX</li>
+                <li>FORMAT</li>
+                <li>ARRAY_TO_STRING</li>
+            </ol>
+        </section>
+        <section id="fff">
+            <h2>FUNCIONES DE FORMATO DE FECHA</h2>
+            <ol>
+                <li>CURRENT_DATE</li>
+                <li>CURRENT_TIME</li>
+                <li>CURRENT_TIMESTAMP</li>
+                <li>DATE_PART</li>
+                <li>EXTRACT</li>
+                <li>AGE</li>
+                <li>DATE_TRUNC</li>
+                <li>NOW</li>
+                <li>INTERVAL</li>
+                <li>AT_TIME_ZONE</li>
+            </ol>
+          
+        </section>
+        <section id="pa">
+            <h2>PROCEDIMIENTOS ALMACENADOS</h2>
+        </section>
+        <section id="fu">
+            <h2>FUNCIONES DEL USUARIO</h2>
+            <ol>
+                <li>
+                    <a href="">FUNCIONES DE AGREGACION</a>
+                    <div class="div_code">
+                        <pre class="code_edit">
+                        <code>
+create or replace function  count_of_people(pcity varchar)
+returns table ( out_city varchar, numero BIGINT)
+language  plpgsql
+as
+$$
+
+BEGIN
+    return query select city ,count(customer_id) 
+    from customers where city = pcity 
+    group by city;
+
+end;
+$$;
+
+select * from count_of_people('London');
+                        </code>
+                        </pre>    
+                    </div>
+                </li>
+                <li><a href="">FUNCIONES VALORES DE TABLA</a>
+                    <div class="div_code">
+                        <pre class="code_edit">
+                        <code>
+create or replace function  count_of_people(pcity varchar)
+returns table ( out_city varchar, id_cus varchar)
+language  plpgsql
+as
+$$
+DECLARE
+   variable_ejemplo varchar;
+BEGIN
+    return query select city ,customer_id 
+    from customers 
+    where city = pcity ;
+
+end;
+$$;
+select * from customers;
+select * from count_of_people('London');                        
+                        </code>
+                        </pre>    
+                    </div>
+                </li>
+                <li>
+                    <a href="">FUNCION ESCALAR</a>
+                    <div class="div_code">
+                        <pre class="code_edit">
+                        <code>
+create or replace function get_current_date_prior()
+returns timestamp
+language plpgsql
+    as
+$$
+    begin
+        return now()- interval '1 day';
+    end;
+$$;
+select get_current_date_prior();
+select * from get_current_date_prior() as prior_day;
+                        </code>
+                        </pre>    
+                    </div>
+                </li>
+            </ol>
+          
+        </section>
+    </main>
+    <footer>
+        <p>Autor : Karen Choquecallata Mancilla</p>
+    </footer>
+</body>
+
+</html>
