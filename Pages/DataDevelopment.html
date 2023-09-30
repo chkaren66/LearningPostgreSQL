@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Querys</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>POSTGRESQL</h1>
+    </header>
+    <nav class="container_menu padre">
+       <a href="/index.html">Funciones</a>
+       <a href="">Consultas </a>
+       <a href="">Data Development</a>
+    </nav>
+    <main>
+        <div>Menu</div>
+        <aside id="indice">
+            <h3>Indice</h3>
+            <div>
+                <ol>
+                    <li ><a href="#ddl">DDL (Data Definition Language) </a></li>
+                    <li ><a href="#dml">DML (Data Manipulation Language) </a></li>
+                    <li ><a href="#manejo_de_excepciones">Manejo de Excepciones </a></li>
+                   
+                </ol>
+            </div>
+           
+        </aside>
+
+
+        <article class="conjunto">
+            <h2>Lenguajes en SQL</h2>
+            <section id="ddl">
+                <h3>DDL (Data Definition Language)</h3>
+                <ol>
+                    <li><a href="">CREATE</a></li>
+                    <li>ALTER</li>
+                    <li>DROP</li>
+                    <li>TRUNCATE</li>
+                    <li>COMMENT</li>
+                    <li>RENAME</li>
+                </ol>
+            </section>
+            <section id="dml">
+                <h3>DML (Data Manipulation Language)</h3>
+                <ol>
+                    <li>SELECT
+    <div class="div_code">
+    <pre class="code_edit">
+    <code>
+    select colum1, colum2 
+    from tabla
+    where condicion; 
+    </code>
+    </pre>    
+    </div>
+                    </li>
+                    <li>INSERT
+    <div class="div_code">
+    <pre class="code_edit">
+    <code>
+    insert into nombre_tabla(colum1, colum2, colum3, column)
+    values(dato1, dato2, dato3, daton);
+    </code>
+    </pre>    
+    </div>
+                    </li>
+                    <li>UPDATE
+    <div class="div_code">
+    <pre class="code_edit">
+    <code>
+    update nombre_tabla
+    set colum_name = nuevo_dato,
+        colum2_name = nuevo_dato
+    where columna_id = columna_Id;
+    </code>
+    </pre>    
+    </div>
+                    </li>
+                    <li>DELETE
+    <div class="div_code">
+    <pre class="code_edit">
+    <code>
+    DELETE from nombre_tabla
+    where columna_id = in_columa_id;
+    </code>
+    </pre>    
+    </div>
+                    </li>
+                </ol>
+            </section>
+            <section id="dcl">
+                <h3>DCL (Data Control Language)</h3>
+                <ol>
+                    <li>GRANT</li>
+                    <li>REVOKE</li>
+                
+                </ol>
+            </section>
+            <section id="tcl">
+                <h3>TCL (Transactional Control Language)</h3>
+                <ol>
+                    <li>COMMIT</li>
+                    <li>ROLLBACK</li>
+                
+                </ol>
+               
+            </section>
+       
+            <h2>SQL Datatypes</h2>
+            <section id="ddl">
+                <h3>Numeric</h3>
+                <ol>
+                    <li>Smallint</li>
+                    <li>Integer</li>
+                    <li>Bigint</li>
+                    <li>Decimal</li>
+                    <li>Numeric</li>
+                    <li>Real</li>
+                </ol>
+            </section>
+            <section id="dml">
+                <h3>Date/Time</h3>
+                <ol>
+                    <li>Timestamp</li>
+                    <li>Date</li>
+                    <li>Time</li>
+                    <li>Interval</li>
+                </ol>
+                
+            </section>
+            <section id="dcl">
+                <h3>Character</h3>
+                <ol>
+                    <li>Char</li>
+                    <li>Varchar</li>
+                    <li>Text</li>
+                
+                </ol>
+            </section>
+            <section id="tcl">
+                <h3>Arrays</h3>
+               
+            </section>
+            <section id="tcl">
+                <h3>Geometric</h3>
+             
+            </section>
+
+
+            <h2 id="manejo_de_excepciones">Manejo de Excepciones </h2>
+            <section>
+                <h3>Que es una excepcion?</h3>
+
+            </section>
+            <section>
+                <h3>Excepciones</h3>
+                <ol>
+                    <li>unique_violation</li>
+                    <li>integrity_constrain_violation</li>
+                    <li>not_null_violation</li>
+                    <li>division_by_cero</li>
+                    <li>syntax_error</li>
+                    <li>program_limit_exceeded</li>
+                </ol>
+            </section>
+        </article>
+
+    </main>
+    <footer>
+        <p>Autor : KACH</p>
+    </footer>
+</body>
+
+</html>

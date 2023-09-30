@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Querys</title>
+    <title>DataArchitecture</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -11,12 +11,12 @@
         <h1>POSTGRESQL</h1>
     </header>
     <nav class="container_menu padre">
-       <a href="">Funciones</a>
+       <a href="/index.html">Funciones</a>
        <a href="">Consultas </a>
        <a href="">Data Development</a>
     </nav>
     <main>
-        <div>Menu</div>
+        
         <aside id="indice">
             <h2>Indice</h2>
             <div>
@@ -29,30 +29,16 @@
            
         </aside>
         <section id="ddl">
-            <h2>DDL (Data Definition Language)</h2>
-            <ol>
-                <li>CREATE</li>
-                <li>ALTER</li>
-                <li>DROP</li>
-                <li>TRUNCATE</li>
-                <li>COMMENT</li>
-                <li>RENAME</li>
-            </ol>
+            <h2>Data Architecture</h2>
+            <div class="imagen">
+                <img src="../Images/postgresArchitecture.jpg" alt="">
+            </div>
+         
         </section>
         <section id="dml">
             <h2>DML (Data Manipulation Language)</h2>
             <ol>
-                <li>SELECT
-<div class="div_code">
-<pre class="code_edit">
-<code>
-select colum1, colum2 
-from tabla
-where condicion; 
-</code>
-</pre>    
-</div>
-                </li>
+
                 <li>INSERT
 <div class="div_code">
 <pre class="code_edit">
@@ -63,28 +49,8 @@ values(dato1, dato2, dato3, daton);
 </pre>    
 </div>
                 </li>
-                <li>UPDATE
-<div class="div_code">
-<pre class="code_edit">
-<code>
-update nombre_tabla
-set colum_name = nuevo_dato,
-    colum2_name = nuevo_dato
-where columna_id = columna_Id;
-</code>
-</pre>    
-</div>
-                </li>
-                <li>DELETE
-<div class="div_code">
-<pre class="code_edit">
-<code>
-DELETE from nombre_tabla
-where columna_id = in_columa_id;
-</code>
-</pre>    
-</div>
-                </li>
+              
+              
             </ol>
         </section>
        
@@ -94,6 +60,5 @@ where columna_id = in_columa_id;
         <p>Autor : KACH</p>
     </footer>
 </body>
-
-</html>
+</body>
 </html>

@@ -58,6 +58,10 @@ h2{
     /* border-radius: 12px; */
     color:  rgb(12, 1, 26);
 }
+h3{
+    color:  rgb(12, 1, 26);
+    padding-top: 20px;
+}
 ol{
     margin: 16px;
     color:  rgb(12, 1, 26);
@@ -98,4 +102,19 @@ footer{
     padding: 10px;
     height: 70px;
     text-align: center;
+}
+
+.imagen{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    
+}
+.imagen img{
+    width: 600px;
+    height:auto;
+}
+
+.conjunto{
+
 }
