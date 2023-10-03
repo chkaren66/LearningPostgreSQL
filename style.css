@@ -66,6 +66,9 @@ ol{
     margin: 16px;
     color:  rgb(12, 1, 26);
 }
+p{
+    color: black;
+}
 
 .div_code{
     text-align: left;

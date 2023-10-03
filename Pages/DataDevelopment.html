@@ -11,10 +11,12 @@
         <h1>POSTGRESQL</h1>
     </header>
     <nav class="container_menu padre">
-       <a href="/index.html">Funciones</a>
-       <a href="">Consultas </a>
-       <a href="">Data Development</a>
-    </nav>
+        <a href="./Pages/DataArchitecture.html">DATA ARCHITECTURE</a>
+        <a href="./Pages/DataDesign.html">DATA DESIGN</a>
+        <a href="./Pages/DataDevelopment.html">DATA DEVELOPMENT</a>
+        <a href="./Pages/DataEngineering.html">DATA ENGINEERING</a>
+       
+     </nav>
     <main>
         <div>Menu</div>
         <aside id="indice">
@@ -24,7 +26,9 @@
                     <li ><a href="#ddl">DDL (Data Definition Language) </a></li>
                     <li ><a href="#dml">DML (Data Manipulation Language) </a></li>
                     <li ><a href="#manejo_de_excepciones">Manejo de Excepciones </a></li>
-                   
+                    <li ><a href="#indice">Indice </a></li>
+                    <li ><a href="#vista">Vista </a></li>
+                    <li><a href="tablaTemporal">Tablas Temporales</a></li>
                 </ol>
             </div>
            
@@ -151,22 +155,122 @@
             </section>
 
 
-            <h2 id="manejo_de_excepciones">Manejo de Excepciones </h2>
+           
             <section>
-                <h3>Que es una excepcion?</h3>
+                <h2 id="manejo_de_excepciones">Manejo de Excepciones </h2>
+                <article>
+                    <h3>Que es una excepcion?</h3>
+                    <p>Es una notificacion de que se ha producido un error o situacion excepcional.</p>
+                </article>
+                <article>
+                    <h3>Excepciones</h3>
+                
+<div class="div_code">
+<pre class="code_edit">
+<code>
+DO 
+$$
+BEGIN 
+INSERT INTO nombreTabla ( colum1, colum2, colum3)
+VALUES ('data','data2','data3')
+
+EXCEPTION
+WHEN nombre_exception THEN
+    RAISE NOTICE 'Error: Violacion en la exception debido a......';
+END; 
+$$
+</code>
+</pre>    
+</div>
+                    <ol>
+                        <li>unique_violation:
+                            <p>Error en validacion de datos como primary key repetido.</p>
+                        </li>
+                        <li>integrity_constrain_violation:
+                            <p>Violacion de llave foranea</p>
+                        </li>
+                        <li>not_null_violation:
+                            <p>Violacion de constrain en un campo not null.</p>
+                        </li>
+                        <li>division_by_cero</li>
+                        <li>syntax_error</li>
+                        <li>program_limit_exceeded:
+                            <p>El timepo limite sin respuesta se ha excedido.</p>
+                        </li>
+                    </ol>
+                </article>
+               
 
             </section>
+           
             <section>
-                <h3>Excepciones</h3>
-                <ol>
-                    <li>unique_violation</li>
-                    <li>integrity_constrain_violation</li>
-                    <li>not_null_violation</li>
-                    <li>division_by_cero</li>
-                    <li>syntax_error</li>
-                    <li>program_limit_exceeded</li>
-                </ol>
+                <h2 id="indice">Indice</h2>
+                <section>
+                    <h3>Definicion</h3>
+                    <p>Estructuras que mejoran la velocidad de las consultas pero consume espacio en el disco.</p>
+                </section>
+                <section>
+                    <h3>Tipos de Indices</h3>
+                    <ol>
+                        <li>B-Tree</li>
+                        <li>Hash</li>
+                        <li>GIN (Generalized inverted index)</li>
+                        <li>GiST(Generalized Search Tree)</li>
+                        <li>SP-GiST</li>
+                        <li>BRIN (Block Range Index)</li>
+                    </ol>
+                </section>
+                <section>
+<div class="div_code">
+<pre class="code_edit">
+<code>
+CREATE INDEX idx_nombre_index
+ON nombre_tabla USING btree(first_name, last_name);
+</code>
+</pre>    
+</div>
+                </section>
+               
+<section id="tablaTemporal">
+    <h2> Tabla Temporal</h2>
+    <p>Las tablas solo funcionan en una sesion especifica y se borran al cerrar la ses</p>
+<div class="div_code">
+<pre class="code_edit">
+<code>
+CREATE TEMPORARY TABLE temp_nombre(
+    colum1 tipo_dato,
+    name varchar
+);
+</code>
+</pre>    
+</div>
+</section>
+          </section>
+          <h2 id="vista">Vista</h2>
+          <section>
+              <h3>Que es una Vista?</h3>
+              <p>Es una representacion virtual de los datos almacenados en una o varias tablas de la base de datos. Una vista no almacena fisicamente los datos, sino que proporciona una forma de acceder.</p>
+              <h3>Vista Materializada</h3>
+              <p>
+                Es un tipo de vista especial que almacena fisicamente los resultados de una consulta en una tabla, en lugar de calcularlos cada vez que se accede a la vista.
+              </p>
+<div class="div_code">
+<pre class="code_edit">
+<code>
+CREATE OR REPLACE VIEW view_passenger AS 
+SELECT a.colum, a.colum2 
+FROM tabla a
+</code>
+</pre>    
+</div>
+
+          </section>
+          
+          <section>
+                
             </section>
+           
+            
         </article>
 
     </main>
